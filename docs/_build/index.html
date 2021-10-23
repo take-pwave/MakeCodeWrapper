@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MakeCodeWrapper 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> MakeCodeWrapper
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-makecode">makecode module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-maqueen">maqueen module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">MakeCodeWrapper</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>MakeCodeWrapper 0.1.0 documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-makecodewrapper-s-documentation">
+<h1>Welcome to MakeCodeWrapper’s documentation!<a class="headerlink" href="#welcome-to-makecodewrapper-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-makecode"></span><div class="section" id="module-makecode">
+<span id="makecode-module"></span><h2>makecode module<a class="headerlink" href="#module-makecode" title="Permalink to this headline">¶</a></h2>
+<p>MakeCodeのpythonコードをmicro:bitのmicropythonで動かすためのラーパークラス</p>
+<p>本ラッパーを使用する場合には、かならず「最初だけ」、「ずっと」ブロックを定義してください。</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="makecode.Basic">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">makecode.</span></span><span class="sig-name descname"><span class="pre">Basic</span></span><a class="headerlink" href="#makecode.Basic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Basic機能のラッパークラス</p>
+<p>Micro:bitの基本機能を実装します。
+ラーパークラスがmicropythonのディスクスペースを圧迫しないように、
+Basicブロックのすべての機能を実装するのではなく、必要最低限とします。</p>
+<p>未実装ブロックは、「LED画面に表示」、「矢印を表示」です。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.clear_screen">
+<span class="sig-name descname"><span class="pre">clear_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.clear_screen" title="Permalink to this definition">¶</a></dt>
+<dd><p>「表示を消す」ブロックのラッパーメソッド</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.forever">
+<span class="sig-name descname"><span class="pre">forever</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.forever" title="Permalink to this definition">¶</a></dt>
+<dd><p>「ずっと」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>function</em>) – 「ずっと」処理で実行する関数</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>「一時停止(ミリ秒)」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>int</em>) – 停止時間をミリ秒で指定</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.show_icon">
+<span class="sig-name descname"><span class="pre">show_icon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">icon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.show_icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>「アイコンを表示」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>icon</strong> (<a class="reference internal" href="index.html#makecode.IconNames" title="makecode.IconNames"><em>IconNames</em></a>) – アイコン名</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.show_number">
+<span class="sig-name descname"><span class="pre">show_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.show_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>「数を表示」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – 表示する数値</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Basic.show_string">
+<span class="sig-name descname"><span class="pre">show_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Basic.show_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>「文字列を表示」</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>String</em>) – 表示する文字列</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="makecode.Button">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">makecode.</span></span><span class="sig-name descname"><span class="pre">Button</span></span><a class="headerlink" href="#makecode.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Button enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Button.A">
+<span class="sig-name descname"><span class="pre">A</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'A'</span></em><a class="headerlink" href="#makecode.Button.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Button.AB">
+<span class="sig-name descname"><span class="pre">AB</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'AB'</span></em><a class="headerlink" href="#makecode.Button.AB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Button.B">
+<span class="sig-name descname"><span class="pre">B</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'B'</span></em><a class="headerlink" href="#makecode.Button.B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="makecode.Gesture">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">makecode.</span></span><span class="sig-name descname"><span class="pre">Gesture</span></span><a class="headerlink" href="#makecode.Gesture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Gesture enumクラス</p>
+<p>3G, 6G, 8Gは省略した。</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.FREE_FALL">
+<span class="sig-name descname"><span class="pre">FREE_FALL</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'freefall'</span></em><a class="headerlink" href="#makecode.Gesture.FREE_FALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.LOGO_DOWN">
+<span class="sig-name descname"><span class="pre">LOGO_DOWN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'down'</span></em><a class="headerlink" href="#makecode.Gesture.LOGO_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.LOGO_UP">
+<span class="sig-name descname"><span class="pre">LOGO_UP</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'up'</span></em><a class="headerlink" href="#makecode.Gesture.LOGO_UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.SCREEN_DOWN">
+<span class="sig-name descname"><span class="pre">SCREEN_DOWN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'face</span> <span class="pre">down'</span></em><a class="headerlink" href="#makecode.Gesture.SCREEN_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.SCREEN_UP">
+<span class="sig-name descname"><span class="pre">SCREEN_UP</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'face</span> <span class="pre">up'</span></em><a class="headerlink" href="#makecode.Gesture.SCREEN_UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.SHAKE">
+<span class="sig-name descname"><span class="pre">SHAKE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'shake'</span></em><a class="headerlink" href="#makecode.Gesture.SHAKE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.TILT_LEFT">
+<span class="sig-name descname"><span class="pre">TILT_LEFT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'left'</span></em><a class="headerlink" href="#makecode.Gesture.TILT_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="makecode.Gesture.TILT_RIGHT">
+<span class="sig-name descname"><span class="pre">TILT_RIGHT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'right'</span></em><a class="headerlink" href="#makecode.Gesture.TILT_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="makecode.IconNames">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">makecode.</span></span><span class="sig-name descname"><span class="pre">IconNames</span></span><a class="headerlink" href="#makecode.IconNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">microbit._img</span></code></p>
+<p>microbit.Imageからアイコン名を利用するためのサブクラス</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="makecode.Input">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">makecode.</span></span><span class="sig-name descname"><span class="pre">Input</span></span><a class="headerlink" href="#makecode.Input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>「入力」機能のラッパークラス</p>
+<p>未実装は、「ゆさぶられたとき」、「端子が短くタップされたとき」、「加速度」、「端子がタッチされている」</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.checkButtonPressed">
+<span class="sig-name descname"><span class="pre">checkButtonPressed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.checkButtonPressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>ボタン押下のチェック</p>
+<p>登録されているボタン押下がある場合には、そのコールバック関数を実行する</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.compass_heading">
+<span class="sig-name descname"><span class="pre">compass_heading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.compass_heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>「方角」ブロックのラッパーメソッド</p>
+<p>現在のコンパスの値を返す
+:returns: 方角
+:rtype: Int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.is_gesture">
+<span class="sig-name descname"><span class="pre">is_gesture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gesture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.is_gesture" title="Permalink to this definition">¶</a></dt>
+<dd><p>「動き」ブロックのラッパーメソッド</p>
+<p>指定された動きか否かを返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True: 指定された動きの場合、それ以外　False</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.light_level">
+<span class="sig-name descname"><span class="pre">light_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.light_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>「明るさ」ブロックのラッパーメソッド</p>
+<p>LED画面に当たる光の明るさを返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>明るさ（0:暗いから255:明るいの範囲）</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.on_button_pressed">
+<span class="sig-name descname"><span class="pre">on_button_pressed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.on_button_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>「ボタンが押されたとき」ブロックのラッパーメソッド</p>
+<p>指定されたボタン（button）が押されたときに実行するコールバック関数（func）を登録する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>button</strong> (<em>Button enum</em>) – ボタン種別</p></li>
+<li><p><strong>func</strong> (<em>コールバック関数</em>) – ボタン押下時のコールバック関数</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="makecode.Input.temperature">
+<span class="sig-name descname"><span class="pre">temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#makecode.Input.temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>「温度」ブロックのラッパーメソッド
+温度を返す</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>温度</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span id="document-maqueen"></span><div class="section" id="module-maqueen">
+<span id="maqueen-module"></span><h2>maqueen module<a class="headerlink" href="#module-maqueen" title="Permalink to this headline">¶</a></h2>
+<p>MaqueenMakeCodeのpythonコードをmicro:bitのmicropythonで動かすためのラーパークラス</p>
+<p>Maqueenの制御については、以下のURLを参照しました。
+<a class="reference external" href="http://oohito.com/nqthm/archives/3116">http://oohito.com/nqthm/archives/3116</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">maqueen.</span></span><span class="sig-name descname"><span class="pre">Maqueen</span></span><a class="headerlink" href="#maqueen.Maqueen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Maqueen機能のラッパークラス</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Dir">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Dir</span></span><a class="headerlink" href="#maqueen.Maqueen.Dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dir enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Dir.CCW">
+<span class="sig-name descname"><span class="pre">CCW</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#maqueen.Maqueen.Dir.CCW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Dir.CW">
+<span class="sig-name descname"><span class="pre">CW</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#maqueen.Maqueen.Dir.CW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LED">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LED</span></span><a class="headerlink" href="#maqueen.Maqueen.LED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>LED enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LED.LED_LEFT">
+<span class="sig-name descname"><span class="pre">LED_LEFT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;microbit._MicroBitDigitalPin</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#maqueen.Maqueen.LED.LED_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LED.LED_RIGHT">
+<span class="sig-name descname"><span class="pre">LED_RIGHT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;microbit._MicroBitAnalogDigitalPin</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#maqueen.Maqueen.LED.LED_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LEDswitch">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">LEDswitch</span></span><a class="headerlink" href="#maqueen.Maqueen.LEDswitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>LEDswitch enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LEDswitch.TURN_OFF">
+<span class="sig-name descname"><span class="pre">TURN_OFF</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#maqueen.Maqueen.LEDswitch.TURN_OFF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.LEDswitch.TURN_ON">
+<span class="sig-name descname"><span class="pre">TURN_ON</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#maqueen.Maqueen.LEDswitch.TURN_ON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Motors">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Motors</span></span><a class="headerlink" href="#maqueen.Maqueen.Motors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Motors enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Motors.ALL">
+<span class="sig-name descname"><span class="pre">ALL</span></span><em class="property"> <span class="pre">=</span> <span class="pre">255</span></em><a class="headerlink" href="#maqueen.Maqueen.Motors.ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Motors.M1">
+<span class="sig-name descname"><span class="pre">M1</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#maqueen.Maqueen.Motors.M1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Motors.M2">
+<span class="sig-name descname"><span class="pre">M2</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#maqueen.Maqueen.Motors.M2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Patrol">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Patrol</span></span><a class="headerlink" href="#maqueen.Maqueen.Patrol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Patrol enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Patrol.PATROL_LEFT">
+<span class="sig-name descname"><span class="pre">PATROL_LEFT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;microbit._MicroBitDigitalPin</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#maqueen.Maqueen.Patrol.PATROL_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.Maqueen.Patrol.PATROL_RIGHT">
+<span class="sig-name descname"><span class="pre">PATROL_RIGHT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;microbit._MicroBitDigitalPin</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#maqueen.Maqueen.Patrol.PATROL_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.motor_run">
+<span class="sig-name descname"><span class="pre">motor_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">motor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.motor_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>「モータを回す」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>motor</strong> (<a class="reference internal" href="index.html#maqueen.Maqueen.Motors" title="maqueen.Maqueen.Motors"><em>Motors</em></a>) – 回転モーター</p></li>
+<li><p><strong>dir</strong> – (Dir) 回転方向</p></li>
+<li><p><strong>speed</strong> – 回転スピード</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.motor_stop">
+<span class="sig-name descname"><span class="pre">motor_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">motor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.motor_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>「モーターを止める」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>motor</strong> (<a class="reference internal" href="index.html#maqueen.Maqueen.Motors" title="maqueen.Maqueen.Motors"><em>Motors</em></a>) – 回転モーター</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.motor_stop_all">
+<span class="sig-name descname"><span class="pre">motor_stop_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.motor_stop_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>すべてのモータを止める</p>
+<p>古い関数との互換性をとるために定義</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.read_patrol">
+<span class="sig-name descname"><span class="pre">read_patrol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patrol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.read_patrol" title="Permalink to this definition">¶</a></dt>
+<dd><p>「ラインセンサーの値」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>)</strong> (<em>patrol</em>) – センサー</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.ultrasonic">
+<span class="sig-name descname"><span class="pre">ultrasonic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.ultrasonic" title="Permalink to this definition">¶</a></dt>
+<dd><p>「超音波センサーの値」ブロックのラッパーメソッド</p>
+<p>実装方法は、以下のURLを参照しました。
+<a class="reference external" href="https://blog.goo.ne.jp/jh7ubc/e/7d866b2771a6f6282efd70301c79204d">https://blog.goo.ne.jp/jh7ubc/e/7d866b2771a6f6282efd70301c79204d</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>unit</strong> (<a class="reference internal" href="index.html#maqueen.PingUnit" title="maqueen.PingUnit"><em>PingUnit</em></a>) – 戻り地の単位</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>超音波センサーの値を指定された単位で返す</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="maqueen.Maqueen.write_led">
+<span class="sig-name descname"><span class="pre">write_led</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#maqueen.Maqueen.write_led" title="Permalink to this definition">¶</a></dt>
+<dd><p>「LEDをつける」ブロックのラッパーメソッド</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pin</strong> (<em>Pin</em>) – LEDのピン</p></li>
+<li><p><strong>value</strong> (<em>LEDswith</em>) – LEDの値</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="maqueen.PingUnit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">maqueen.</span></span><span class="sig-name descname"><span class="pre">PingUnit</span></span><a class="headerlink" href="#maqueen.PingUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PingUnit enumクラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.PingUnit.CENTIMETERS">
+<span class="sig-name descname"><span class="pre">CENTIMETERS</span></span><a class="headerlink" href="#maqueen.PingUnit.CENTIMETERS" title="Permalink to this definition">¶</a></dt>
+<dd><p>センチメートル</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="maqueen.PingUnit.MICRO_SECONDS">
+<span class="sig-name descname"><span class="pre">MICRO_SECONDS</span></span><a class="headerlink" href="#maqueen.PingUnit.MICRO_SECONDS" title="Permalink to this definition">¶</a></dt>
+<dd><p>マイクロ秒</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">CENTIMETERS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">MICRO_SECONDS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Hiroshi TAKEMOTO.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
